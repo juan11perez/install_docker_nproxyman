@@ -23,7 +23,7 @@ installApps()
         echo ""
     fi
 
-    if [[ "$ISCOMP" == *"command not found"* ]]; then
+    if [[ "$ISCOMP" == *"compose"* ]]; then
         read -rp "Docker-Compose (y/n): " DCOMP
     else
         echo "Docker-compose appears to be installed."
