@@ -220,7 +220,9 @@ startInstall()
         ######################################        
         
         if [[ "$OS" != "1" ]]; then
-            sudo apt install docker-compose -y >> ~/docker-script-install.log 2>&1
+            sudo mkdir -p /usr/local/lib/docker/cli-plugins
+            sudo curl -SL https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-linux-x86_64 -o /usr/local/lib/docker/cli-plugins/docker-compose 2>&1
+            sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose 2>&1
         fi
 
         ######################################
